@@ -1,0 +1,17 @@
+# One extension ID per line, installed via `code --install-extension`.
+
+# .NET / C#
+ms-dotnettools.csdevkit
+ms-dotnettools.csharp
+ms-dotnettools.vscode-dotnet-runtime
+
+# Formatting
+esbenp.prettier-vscode
+
+# Remote / containers
+ms-vscode.remote-explorer
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-wsl
+ms-vscode-remote.remote-containers
+ms-azuretools.vscode-containers
+docker.docker

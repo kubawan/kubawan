@@ -1,0 +1,37 @@
+# Single source of truth for tools installed on every machine.
+# Add a tool here once; each OS script (scripts/macos.sh, scripts/linux.sh,
+# scripts/windows.ps1) reads this file via `yq` and installs it the
+# platform-appropriate way.
+#
+# apt entries use `special:` for tools that need a repo/snap setup instead of
+# a plain `apt install` (see scripts/linux.sh for the matching function).
+
+tools:
+  - name: git
+    brew: { package: git, cask: false }
+    apt: { package: git }
+    winget: { id: Git.Git }
+
+  - name: docker
+    brew: { package: docker, cask: true }
+    apt: { special: docker-engine }
+    winget: { id: Docker.DockerDesktop }
+    wsl_note: >-
+      On WSL, don't install the Linux engine inside the distro. Install
+      Docker Desktop on the Windows host and enable WSL integration for
+      this distro instead.
+
+  - name: dotnet-sdk
+    brew: { package: dotnet-sdk, cask: false }
+    apt: { package: dotnet-sdk-8.0 }
+    winget: { id: Microsoft.DotNet.SDK.8 }
+
+  - name: vscode
+    brew: { package: visual-studio-code, cask: true }
+    apt: { special: vscode-repo }
+    winget: { id: Microsoft.VisualStudioCode }
+
+  - name: rider
+    brew: { package: rider, cask: true }
+    apt: { special: rider-snap }
+    winget: { id: JetBrains.Rider }

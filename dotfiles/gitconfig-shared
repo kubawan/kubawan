@@ -1,0 +1,9 @@
+# Machine-independent git settings, included into ~/.gitconfig by
+# scripts/lib/apply-dotfiles.sh via `include.path`. user.name/user.email
+# stay in the real ~/.gitconfig since they're set interactively, not here.
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
+[core]
+	autocrlf = input
