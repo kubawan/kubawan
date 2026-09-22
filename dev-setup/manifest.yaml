@@ -23,8 +23,8 @@ tools:
 
   - name: dotnet-sdk
     brew: { package: dotnet-sdk, cask: false }
-    apt: { package: dotnet-sdk-8.0 }
-    winget: { id: Microsoft.DotNet.SDK.8 }
+    apt: { package: dotnet-sdk-10.0 }
+    winget: { id: Microsoft.DotNet.SDK.10 }
 
   - name: vscode
     brew: { package: visual-studio-code, cask: true }
